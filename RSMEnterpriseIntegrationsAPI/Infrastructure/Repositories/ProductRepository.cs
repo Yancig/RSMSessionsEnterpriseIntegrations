@@ -12,11 +12,32 @@ namespace RSMEnterpriseIntegrationsAPI.Infrastructure.Repositories
         {
             _dbContext = dbContext;
         }
+
+        public Task<int> CreateProduct(Product product)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> DeleteProduct(Product product)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<IEnumerable<Product>> GetAllProducts()
         {
             return await _dbContext.Set<Product>()
                 .AsNoTracking()
                 .ToListAsync();
+        }
+
+        public Task<Product?> GetProductById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> UpdateProduct(Product product)
+        {
+            throw new NotImplementedException();
         }
     }
 }
