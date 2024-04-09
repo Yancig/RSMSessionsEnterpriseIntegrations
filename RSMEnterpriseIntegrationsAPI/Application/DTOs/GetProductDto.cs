@@ -1,6 +1,6 @@
-namespace RSMEnterpriseIntegrationsAPI.Domain.Models
+﻿namespace RSMEnterpriseIntegrationsAPI.Application.DTOs
 {
-    public class Product
+    public class GetProductDto
     {
         public int? ProductID { get; set; }
         public string? Name { get; set; }
@@ -27,10 +27,6 @@ namespace RSMEnterpriseIntegrationsAPI.Domain.Models
         public DateTime? DiscontinuedDate { get; set; }
         public Guid rowguid { get; set; }
         public DateTime ModifiedDate { get; set; }
-
-        //public virtual ProductModel ProductModel { get; set; }
-        //public virtual ProductSubcategory ProductSubcategory { get; set; }
-
 
     }
 }
