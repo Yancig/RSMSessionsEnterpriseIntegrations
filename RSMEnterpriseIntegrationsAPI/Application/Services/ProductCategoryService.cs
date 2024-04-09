@@ -7,16 +7,16 @@ namespace RSMEnterpriseIntegrationsAPI.Application.Services
 {
     public class ProductCategoryService : IProductCategoryService
     {
-        private readonly IProductCategoryService _productCategoryService;
+        private readonly IProductCategoryRepository _productCategoryRepository;
 
-        public ProductCategoryService(IProductCategoryService productCategoryService)
+        public ProductCategoryService(IProductCategoryRepository productCategoryRepository)
         {
-            _productCategoryService =  productCategoryService;
+            _productCategoryRepository =  productCategoryRepository;
         }
 
         public async Task<IEnumerable<GetProductCategoryDto>> GetAll()
         {
-            var Products = await _productCategoryService.GetAll();
+            var Products = await _productCategoryRepository.GetAllProductCategorys();
 
             List<GetProductCategoryDto> productsDto = [];
 
@@ -25,6 +25,7 @@ namespace RSMEnterpriseIntegrationsAPI.Application.Services
                 GetProductCategoryDto dto = new()
                 {
                     Name = product.Name,
+                    rowguid=product.rowguid
                 };
                 productsDto.Add(dto);
             }

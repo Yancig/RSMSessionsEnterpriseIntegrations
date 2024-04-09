@@ -9,5 +9,6 @@ namespace RSMEnterpriseIntegrationsAPI.Domain.Interfaces
         Task<int> CreateProductCategory(ProductCategory productCategory);
         Task<int> UpdateProductCategory(ProductCategory productCategory);
         Task<int> DeleteProductCategory(ProductCategory productCategory);
+       
     }
 }
