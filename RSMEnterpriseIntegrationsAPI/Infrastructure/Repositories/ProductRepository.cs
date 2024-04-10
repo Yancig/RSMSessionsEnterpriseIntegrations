@@ -13,9 +13,14 @@ namespace RSMEnterpriseIntegrationsAPI.Infrastructure.Repositories
             _dbContext = dbContext;
         }
 
-        public Task<int> CreateProduct(Product product)
+        public  async Task<int> CreateProduct(Product product)
         {
-            throw new NotImplementedException();
+            await _dbContext.Products.AddAsync(product);
+            //await _dbContext.AddAsync(product);
+
+            return  await _dbContext.SaveChangesAsync();
+
+
         }
 
         public Task<int> DeleteProduct(Product product)

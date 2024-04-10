@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RSMEnterpriseIntegrationsAPI.Application.DTOs;
 using RSMEnterpriseIntegrationsAPI.Domain.Interfaces;
 
 namespace RSMEnterpriseIntegrationsAPI.Controllers
@@ -21,5 +22,12 @@ namespace RSMEnterpriseIntegrationsAPI.Controllers
             return Ok(await _productCategoryService.GetAll());
 
         }
+        [HttpPost("Create")]
+
+        public async Task<IActionResult> Create(CreateProductCategoryDto dto)
+        {
+            return Ok(await _productCategoryService.CreateProduct(dto));
+        }
+
     }
  }

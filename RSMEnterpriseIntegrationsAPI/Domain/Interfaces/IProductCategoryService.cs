@@ -7,7 +7,7 @@ namespace RSMEnterpriseIntegrationsAPI.Domain.Interfaces
     {
         Task<IEnumerable<GetProductCategoryDto>> GetAll();
         Task<ProductCategory?> GetProductById(int id);
-        Task<int> CreateProduct(ProductCategory productCategory);
+        Task<int> CreateProduct(CreateProductCategoryDto productCategory);
         Task<int> UpdateProduct(ProductCategory productCategory);
         Task<int> DeleteProduct(ProductCategory productCategory);
     }

@@ -26,15 +26,28 @@ namespace RSMEnterpriseIntegrationsAPI.Application.Services
                 {
                     Name = product.Name,
                     rowguid=product.rowguid
+
                 };
                 productsDto.Add(dto);
             }
             return productsDto;
         }
-        public Task<int> CreateProduct(ProductCategory productCategory)
+        public async Task<int> CreateProduct(CreateProductCategoryDto productCategory)
         {
-            throw new NotImplementedException();
+            ProductCategory product = new()
+            {
+
+                //ProductCategoryID = productCategory.ProductCategoryID,
+                Name = productCategory.Name,
+                rowguid= productCategory.rowguid,
+                ModifiedDate= productCategory.ModifiedDate
+
+            };
+
+            return await _productCategoryRepository.CreateProductCategory(product); 
+
         }
+    
 
         public Task<int> DeleteProduct(ProductCategory productCategory)
         {

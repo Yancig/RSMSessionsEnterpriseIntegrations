@@ -12,9 +12,10 @@ namespace RSMEnterpriseIntegrationsAPI.Infrastructure.Repositories
         {
             _dbContext = dbContext;
         }
-        public Task<int> CreateProductCategory(ProductCategory productCategory)
+        public async  Task<int> CreateProductCategory(ProductCategory productCategory)
         {
-            throw new NotImplementedException();
+            await _dbContext.AddAsync(productCategory);
+            return await _dbContext.SaveChangesAsync();
         }
 
         public Task<int> DeleteProductCategory(ProductCategory productCategory)
